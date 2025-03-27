@@ -1,0 +1,60 @@
+div {
+    width: 300px;
+    border: solid ;
+    margin: 20px;
+    margin-left: auto;
+    margin-bottom: auto;
+    margin-right: auto;
+    padding: 25px;
+    padding-top: 0px;
+}
+
+/* Titles/Subtitles */
+h1 {
+    font-family: 'Courier New', Courier, monospace;
+    margin-bottom: auto;
+    margin-right: auto;
+}
+
+.mainMenuSub {
+    font-family: 'Courier New', Courier, monospace;
+    margin-bottom: auto;
+    margin-right: auto;
+}
+
+
+/* Length Button */
+
+.lengthForm {
+    padding: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.lengthButton:hover {
+    background-color: skyblue;
+}
+
+/* Temperature Button */
+
+.temperatureForm {
+    padding: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.temperatureButton:hover {
+    background-color: skyblue;
+}
+
+/* Weight Button */
+
+.weightForm {
+    padding: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.weightButton:hover {
+    background-color: skyblue;
+}
