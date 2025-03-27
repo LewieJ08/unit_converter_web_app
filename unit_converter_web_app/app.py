@@ -14,12 +14,12 @@ def length():
 
 @app.route("/temperature")
 
-def temperture():
+def temperature():
     return render_template("temperature.html")
 
 @app.route("/weight")
 
-def length():
+def weight():
     return render_template("weight.html")
 
 if __name__ == "__main__":
