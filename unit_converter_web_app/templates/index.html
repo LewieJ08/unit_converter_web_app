@@ -1,1 +1,25 @@
 <!DOCTYPE html>
+<html>
+    <head>
+        <title> Unit Converter</title>
+        <link rel="stylesheet" href="static/style.css">
+    </head>
+    <body>
+        <div>
+            <h1>Unit Converter</h2>
+            <h3 class="mainMenuSub">Main Menu</h3>
+
+            <form class="lengthForm" action="{{url_for('length')}}">
+                <button class="lengthButton"  type="submit">Length</button>
+            </form>
+
+            <form class="temperatureForm" action="{{url_for('temperature')}}">
+                <button class="temperatureButton" type="sumbit">Temperature</button>
+            </form>
+
+            <form class="weightForm" action="{{url_for('weight')}}">
+                <button class="weightButton" type="submit">Weight</button>
+            </form>
+        </div>
+    </body>
+</html>
