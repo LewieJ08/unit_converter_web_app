@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -7,20 +7,20 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
-@app.route("/length")
+@app.route("/length", methods=["GET", "POST"])
 
 def length():
     return render_template("length.html")
 
-@app.route("/temperature")
+@app.route("/temperature", methods=["GET", "POST"])
 
 def temperature():
-    return render_template("temperature.html")
+    return render_template("temperature.html" , )
 
-@app.route("/weight")
+@app.route("/weight",methods=["GET", "POST"])
 
 def weight():
     return render_template("weight.html")
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
