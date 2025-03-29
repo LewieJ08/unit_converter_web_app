@@ -7,28 +7,38 @@ div {
     margin-right: auto;
     padding: 25px;
     padding-top: 0px;
+    text-align:center;
 }
 
-/* Titles/Subtitles */
+/* Titles/Subtitles/labels */
+
 h1 {
     font-family: 'Courier New', Courier, monospace;
-    margin-bottom: auto;
-    margin-right: auto;
+    padding: 15px;
 }
 
 .mainMenuSub {
     font-family: 'Courier New', Courier, monospace;
-    margin-bottom: auto;
-    margin-right: auto;
 }
+
+label {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: medium;
+    display: block;
+}
+
+.convertButton:hover {
+    background-color: skyblue;
+}
+
 
 
 /* Length Button */
 
 .lengthForm {
-    padding: 5px;
-    margin-left: auto;
-    margin-right: auto;
+    padding: 5px; 
+    margin: auto; 
+    
 }
 
 .lengthButton:hover {
@@ -39,8 +49,8 @@ h1 {
 
 .temperatureForm {
     padding: 5px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
+  
 }
 
 .temperatureButton:hover {
@@ -51,10 +61,11 @@ h1 {
 
 .weightForm {
     padding: 5px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
+    
 }
 
 .weightButton:hover {
     background-color: skyblue;
 }
+

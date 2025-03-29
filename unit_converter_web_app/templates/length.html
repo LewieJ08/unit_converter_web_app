@@ -1,1 +1,43 @@
 <!DOCTYPE html>
+<html>
+    <head>
+        <Title>Length Converter</Title>
+        <link rel="stylesheet" href="static/style.css">
+    </head>
+    <body>
+        <div>
+            <h1>Length Converter</h1>
+            <form action="/length" method="post">
+                <label for="length">Enter the length to convert</label>
+                <input class="lengthInt" type="number" id="length" name="length" step="0.01">
+
+                <label for="unitFor">Unit to convert from</label>
+                <select name="unitFor" id="unitFor">
+                    <option value="mm">mm</option>
+                    <option value="cm">cm</option>
+                    <option value="m">m</option>
+                    <option value="km">km</option>
+                    <option value="in">in</option>
+                    <option value="ft">ft</option>
+                    <option value="yd">yd</option>
+                    <option value="mi">mi</option>
+                </select>
+                    
+
+                <label for="unitTo">Unit to convert to</label>
+                <select name="unitTo" id="unitTo">
+                    <option value="mm">mm</option>
+                    <option value="cm">cm</option>
+                    <option value="m">m</option>
+                    <option value="km">km</option>
+                    <option value="in">in</option>
+                    <option value="ft">ft</option>
+                    <option value="yd">yd</option>
+                    <option value="mi">mi</option>
+                </select> <br><br>
+
+                <input class="convertButton" type="submit" id="submit" name="convert">
+            </form>
+        </div>
+    </body>
+</html> 
