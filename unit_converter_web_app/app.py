@@ -21,18 +21,22 @@ def length():
         "yd": 0.9144,   
         "mi": 1609.34,
      }
-        
+    
     if request.method == "POST":
         unit = float(request.form["length"])
-        unit_for = request.form["unitFor"]
+        unit_from = request.form["unitFrom"]
         unit_to = request.form["unitTo"]
 
-        length_in_meters = unit * length_conversions[unit_for]
+        print(f"Calculating conversion: {unit} {unit_from} to {unit_to}...")
+
+        length_in_meters = unit * length_conversions[unit_from]
         converted_length = length_in_meters / length_conversions[unit_to]
 
-
-    return render_template("length.html")
-
+        return render_template("length.html", result = converted_length, unit_to = unit_to)
+    
+    else:
+        return render_template("length.html", result = None)
+    
 @app.route("/temperature", methods=["GET", "POST"])
 
 def temperature():

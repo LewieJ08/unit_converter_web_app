@@ -6,13 +6,16 @@
     </head>
     <body>
         <div>
+        {% if result is not none %}
+            <h3>Converted Length: {{ result }} {{ unit_to }}</h3>
+        {% else %}
             <h1>Length Converter</h1>
             <form action="/length" method="post">
                 <label for="length">Enter the length to convert</label>
                 <input class="lengthInt" type="number" id="length" name="length" step="0.01">
 
-                <label for="unitFor">Unit to convert from</label>
-                <select name="unitFor" id="unitFor">
+                <label for="unitFrom">Unit to convert from</label>
+                <select name="unitFrom" id="unitFrom">
                     <option value="mm">mm</option>
                     <option value="cm">cm</option>
                     <option value="m">m</option>
@@ -36,8 +39,9 @@
                     <option value="mi">mi</option>
                 </select> <br><br>
 
-                <input class="convertButton" type="submit" id="submit" name="convert">
+                <input class="convertButton" type="submit" id="submit" name="convert" value="Convert">
             </form>
+        {% endif %}
         </div>
     </body>
 </html> 
