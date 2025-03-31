@@ -1,1 +1,46 @@
 <!DOCTYPE html>
+<html>
+    <head>
+        <Title>Weight Converter</Title>
+        <link rel="stylesheet" href="static/style.css">
+    </head>
+    <body>
+        <div>
+        {% if result is not none %}
+            <h1>Weight Converter</h1>
+            <h3>Converted Weight: {{ result }} {{ unit_to }}</h3> <br>
+            <form class="mainMenuForm" action="{{url_for('index')}}">
+                <button class="mainMenuButton"  type="submit">Main Menu</button>
+            </form>
+        {% else %}
+            <h1>Length Converter</h1>
+            <form action="/weight" method="post">
+                <label for="weight">Enter the length to convert</label>
+                <input class="weightInt" type="number" id="weight" name="weight" step="0.01">
+
+                <label for="unitFrom">Unit to convert from</label>
+                <select name="unitFrom" id="unitFrom">
+                    <option value="mg">mg</option>
+                    <option value="g">g</option>
+                    <option value="kg">kg</option>
+                    <option value="kg">kg</option>
+                    <option value="oz">oz</option>
+                    <option value="lbs">lbs</option>
+                </select>
+                    
+                <label for="unitTo">Unit to convert to</label>
+                <select name="unitTo" id="unitTo">
+                    <option value="mg">mg</option>
+                    <option value="g">g</option>
+                    <option value="kg">kg</option>
+                    <option value="kg">kg</option>
+                    <option value="oz">oz</option>
+                    <option value="lbs">lbs</option>
+                </select> <br><br>
+
+                <input class="convertButton" type="submit" id="submit" name="convert" value="Convert">
+            </form>
+        {% endif %}
+        </div>
+    </body>
+</html> 
