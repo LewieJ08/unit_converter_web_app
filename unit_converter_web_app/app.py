@@ -23,16 +23,20 @@ def length():
      }
     
     if request.method == "POST":
-        unit = float(request.form["length"])
-        unit_from = request.form["unitFrom"]
-        unit_to = request.form["unitTo"]
+        try:
+            unit = float(request.form["length"])
+            unit_from = request.form["unitFrom"]
+            unit_to = request.form["unitTo"]
 
-        print(f"Calculating conversion: {unit} {unit_from} to {unit_to}...")
+            print(f"Calculating conversion: {unit} {unit_from} to {unit_to}...")
 
-        length_in_meters = unit * length_conversions[unit_from]
-        converted_length = length_in_meters / length_conversions[unit_to]
+            length_in_meters = unit * length_conversions[unit_from]
+            converted_length = length_in_meters / length_conversions[unit_to]
 
-        return render_template("length.html", result = converted_length, unit_to = unit_to)
+            return render_template("length.html", result = converted_length, unit_to = unit_to)
+        
+        except ValueError:
+            print("Form field empty")
     
     else:
         return render_template("length.html", result = None)

@@ -7,7 +7,11 @@
     <body>
         <div>
         {% if result is not none %}
-            <h3>Converted Length: {{ result }} {{ unit_to }}</h3>
+            <h1>Length Converter</h1>
+            <h3>Converted Length: {{ result }} {{ unit_to }}</h3> <br>
+            <form class="mainMenuForm" action="{{url_for('index')}}">
+                <button class="mainMenuButton"  type="submit">Main Menu</button>
+            </form>
         {% else %}
             <h1>Length Converter</h1>
             <form action="/length" method="post">

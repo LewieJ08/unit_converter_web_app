@@ -17,7 +17,7 @@ h1 {
     padding: 15px;
 }
 
-.mainMenuSub {
+h3 {
     font-family: 'Courier New', Courier, monospace;
 }
 
@@ -31,14 +31,20 @@ label {
     background-color: skyblue;
 }
 
+.mainMenuForm {
+    padding: 5px; 
+    margin: auto;
+}
 
+.mainMenuButton:hover {
+    background-color: skyblue;
+}
 
 /* Length Button */
 
 .lengthForm {
     padding: 5px; 
     margin: auto; 
-    
 }
 
 .lengthButton:hover {
@@ -50,7 +56,6 @@ label {
 .temperatureForm {
     padding: 5px;
     margin: auto;
-  
 }
 
 .temperatureButton:hover {
@@ -62,7 +67,6 @@ label {
 .weightForm {
     padding: 5px;
     margin: auto;
-    
 }
 
 .weightButton:hover {
