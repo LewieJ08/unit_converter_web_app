@@ -9,7 +9,7 @@ setup(
     ],  
     entry_points={  
         "console_scripts": [
-            "unit-converter=unit_converter_web_app.app.run" 
+            "unit-converter=unit_converter_web_app.app:app.run" 
         ]
     },
     author="Lewie Jackson",
