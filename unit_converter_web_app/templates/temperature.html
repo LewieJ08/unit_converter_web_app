@@ -1,1 +1,40 @@
 <!DOCTYPE html>
+<html>
+    <head>
+        <Title>Temperature Converter</Title>
+        <link rel="stylesheet" href="static/style.css">
+    </head>
+    <body>
+        <div>
+        {% if result is not none %}
+            <h1>Temperature Converter</h1>
+            <h3>Converted Temperature: {{ result }} {{ unit_to }}</h3> <br>
+            <form class="mainMenuForm" action="{{url_for('index')}}">
+                <button class="mainMenuButton"  type="submit">Main Menu</button>
+            </form>
+        {% else %}
+            <h1>Length Converter</h1>
+            <form action="/temperature" method="post">
+                <label for="temperature">Enter the length to convert</label>
+                <input class="temperatureInt" type="number" id="temperature" name="temperature" step="0.01">
+
+                <label for="unitFrom">Unit to convert from</label>
+                <select name="unitFrom" id="unitFrom">
+                    <option value="C">°C</option>
+                    <option value="F">°F</option>
+                    <option value="K">K</option>
+                </select>
+                    
+                <label for="unitTo">Unit to convert to</label>
+                <select name="unitTo" id="unitTo">
+                    <option value="C">°C</option>
+                    <option value="F">°F</option>
+                    <option value="K">K</option>
+                </select> <br><br>
+
+                <input class="convertButton" type="submit" id="submit" name="convert" value="Convert">
+            </form>
+        {% endif %}
+        </div>
+    </body>
+</html> 
