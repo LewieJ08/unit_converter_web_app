@@ -39,6 +39,22 @@ def convert_temperature(unit, unit_from, unit_to):
             return (celsius * 9 / 5) + 32
         elif unit_to == "K":
             return celsius + 273.15
+        
+def convert_weight(unit, unit_from, unit_to):
+
+    weight_conversions = {
+        "mg": 0.001,       
+        "g": 1,            
+        "kg": 1000,         
+        "oz": 28.3495,    
+        "lbs": 453.592,    
+    }
+
+    weight_in_grams = unit * weight_conversions[unit_from]
+    converted_weight=  weight_in_grams / weight_conversions[unit_to]
+
+    return converted_weight
+
 
 @app.route("/")
 
@@ -91,9 +107,25 @@ def temperature():
 
 @app.route("/weight",methods=["GET", "POST"])
 
-
 def weight():
-    return render_template("weight.html")
+
+    if request.method == "POST":
+        try:
+            unit = float(request.form["weight"])
+            unit_from = request.form["unitFrom"]
+            unit_to = request.form["unitTo"]
+
+            print(f"Calculating conversion: {unit} {unit_from} to {unit_to}...")
+
+            converted_weight = convert_weight(unit, unit_from, unit_to)
+
+            return render_template("weight.html", result = converted_weight, unit_to = unit_to)
+        
+        except ValueError:
+            print("Form field empty")
+            return render_template("weight.html", result = None)
+
+    return render_template("weight.html", result = None)
 
 if __name__ == "__main__":
     app.run(debug=True)
