@@ -5,11 +5,11 @@ setup(
     version="1.0.0",
     packages=find_packages(), 
     install_requires=[
-        "flask"
+        "Flask"
     ],  
     entry_points={  
         "console_scripts": [
-            "unit-converter=unit_converter_web_app.app" 
+            "unit-converter=unit_converter_web_app.app.run" 
         ]
     },
     author="Lewie Jackson",
