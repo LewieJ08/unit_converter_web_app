@@ -1,0 +1,5 @@
+recursive-include unit_converter_web_app/templates index.html
+recursive-include unit_converter_web_app/templates length.html
+recursive-include unit_converter_web_app/templates temperature.html
+recursive-include unit_converter_web_app/templates weight.html
+recursive-include unit_converter_web_app/static style.css
